@@ -4,7 +4,7 @@
 title = mCalc
 
 # (str) Package name
-package.name = mCalc_App
+package.name = mCalc
 
 # (str) Package domain (needed for android/ios packaging)
 package.domain = org.wiseplat
