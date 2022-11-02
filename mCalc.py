@@ -16,6 +16,8 @@ class mCalcApp(App):
                                        readonly=True, halign='right', font_size=100)
         if self.solution.text != "0":
             self.fast_solution.text = self.solution.text
+        else:
+            self.fast_solution.text = ''
         main_layout.add_widget(BoxLayout())
         main_layout.add_widget(self.fast_solution)
 
@@ -45,8 +47,6 @@ class mCalcApp(App):
 
         return main_layout
 
-
-
     def on_button_press(self, instance):
         if instance.text == "C":
             self.solution.text = "0"
@@ -57,6 +57,7 @@ class mCalcApp(App):
             self.solution.text = self.solution.text[:-1]
             if self.solution.text == "":
                 self.solution.text = "0"
+                self.fast_solution.text = ''
             else:
                 try:
                     self.fast_solution.text = str(eval(self.solution.text))
